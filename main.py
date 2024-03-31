@@ -1,8 +1,8 @@
 class User:
-    def __init__(self, user_id, name, access_level='user'):
+    def __init__(self, user_id, name):
         self.__user_id = user_id
         self.__name = name
-        self.__access_level = access_level
+        self.__access_level = 'user'
 
     def get_user_id(self):
         return self.__user_id
@@ -16,7 +16,8 @@ class User:
 
 class Admin(User):
     def __init__(self, user_id, name):
-        super().__init__(user_id, name, access_level='admin')
+        super().__init__(user_id, name)
+        self.__access_level = 'admin'
         self.__users = []
 
     def add_user(self, user):
